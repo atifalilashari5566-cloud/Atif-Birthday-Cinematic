@@ -114,3 +114,102 @@ function createFlower(){
 }
 
 setInterval(createFlower,650);
+// ==============================
+// START BUTTON
+// ==============================
+
+startBtn.addEventListener("click", () => {
+
+    loadingScreen.style.display = "none";
+
+    if (music) {
+
+        music.play().catch(() => {});
+
+    }
+
+    currentScene = 1;
+
+    showScene(currentScene);
+
+});
+
+// ==============================
+// AUTO SCENE CHANGE
+// ==============================
+
+function nextScene(){
+
+    if(currentScene < scenes.length - 1){
+
+        currentScene++;
+
+        showScene(currentScene);
+
+    }
+
+}
+
+setInterval(()=>{
+
+    if(currentScene > 0 && currentScene < 3){
+
+        nextScene();
+
+    }
+
+},8000);
+
+// ==============================
+// PHOTO SLIDESHOW
+// ==============================
+
+const slides = document.querySelectorAll(".slide");
+
+let slideIndex = 0;
+
+function changeSlide(){
+
+    if(slides.length === 0) return;
+
+    slides.forEach(slide=>{
+
+        slide.style.display = "none";
+
+    });
+
+    slides[slideIndex].style.display = "block";
+
+    slideIndex++;
+
+    if(slideIndex >= slides.length){
+
+        slideIndex = 0;
+
+    }
+
+}
+
+changeSlide();
+
+setInterval(changeSlide,3000);
+
+// ==============================
+// LOADING SCREEN
+// ==============================
+
+window.addEventListener("load",()=>{
+
+    setTimeout(()=>{
+
+        loadingScreen.style.opacity="0";
+
+        setTimeout(()=>{
+
+            loadingScreen.style.display="none";
+
+        },1000);
+
+    },1500);
+
+});

@@ -213,3 +213,81 @@ window.addEventListener("load",()=>{
     },1500);
 
 });
+// ==============================
+// TYPEWRITER LETTER
+// ==============================
+
+const typing = document.getElementById("typing");
+
+const message = `Dear Atif ❤️
+
+Happy Birthday!
+
+May Allah bless you with happiness,
+good health,
+success,
+peace,
+and endless smiles.
+
+May all your dreams come true.
+
+Have a wonderful birthday! 🎂✨`;
+
+let textIndex = 0;
+
+function typeWriter(){
+
+    if(!typing) return;
+
+    if(textIndex < message.length){
+
+        typing.innerHTML += message.charAt(textIndex);
+
+        textIndex++;
+
+        setTimeout(typeWriter,40);
+
+    }
+
+}
+
+// Letter starts when Scene 3 appears
+setTimeout(typeWriter,16000);
+
+// ==============================
+// NEXT BUTTON
+// ==============================
+
+if(nextBtn){
+
+    nextBtn.addEventListener("click",()=>{
+
+        currentScene = 3;
+
+        showScene(currentScene);
+
+    });
+
+}
+
+// ==============================
+// GIFT
+// ==============================
+
+const gift = document.getElementById("gift");
+
+if(gift){
+
+    gift.addEventListener("click",()=>{
+
+        alert("🎉 Happy Birthday Atif ❤️🎂");
+
+    });
+
+}
+
+// ==============================
+// START FIRST SCENE
+// ==============================
+
+showScene(0);

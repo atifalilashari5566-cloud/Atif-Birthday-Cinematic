@@ -324,3 +324,104 @@ button:hover{
     font-size:18px;
     color:#cfe8ff;
 }
+/* ==========================================
+   LETTER
+========================================== */
+
+#typing{
+    min-height:220px;
+    white-space:pre-line;
+    text-align:left;
+    line-height:1.9;
+    font-size:19px;
+}
+
+/* ==========================================
+   GIFT
+========================================== */
+
+.final{
+    text-align:center;
+}
+
+#gift{
+    margin-top:30px;
+    font-size:90px;
+    cursor:pointer;
+    animation:bounce 1.6s infinite;
+    user-select:none;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+    .glass{
+        width:95%;
+        padding:28px;
+    }
+
+    h1{
+        font-size:36px;
+    }
+
+    h2{
+        font-size:26px;
+    }
+
+    p{
+        font-size:16px;
+    }
+
+    .date{
+        font-size:22px;
+    }
+
+    .slide{
+        width:170px;
+        height:230px;
+    }
+
+    #moon{
+        width:80px;
+        height:80px;
+        top:20px;
+        right:20px;
+    }
+
+    button{
+        width:100%;
+        font-size:18px;
+        padding:14px 20px;
+    }
+}
+
+/* ==========================================
+   SMOOTH FADE
+========================================== */
+
+.scene{
+    animation:fadeScene 1s ease;
+}
+
+@keyframes fadeScene{
+    from{
+        opacity:0;
+        transform:scale(.96);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
